@@ -1,4 +1,5 @@
 //contribution: https://github.com/mmeii/code-quiz
+//https://www.youtube.com/watch?v=p5nogm7ul6A&ab_channel=CodingArtist
 
 // elements from HTML
 var viewHighScore = document.getElementById("viewHighScore");
@@ -31,7 +32,7 @@ var scoreResult;
 var i = 0;
 
 // Timer
-var totalTime = 61;
+var totalTime = 60;
 function newQuiz() {
     i = 0;
     totalTime = 60;
@@ -61,6 +62,7 @@ function newQuiz() {
 
     showQuiz();
 };
+
 
 // quiz
 function showQuiz() {
@@ -141,11 +143,10 @@ function storeHighScores(event) {
         score: finalScore.textContent
     };
 
-    console.log(userScore);
     scoresArray.push(userScore);
 
     var scoresArrayString = JSON.stringify(scoresArray);
-    window.localStorage.setItem("high scores", scoresArrayString);
+    localStorage.setItem("high scores", scoresArrayString);
     
     showHighScores();
 }
@@ -168,7 +169,6 @@ function showHighScores() {
     if (savedHighScores === null) {
         return;
     }
-    console.log(savedHighScores);
 
     var storedHighScores = JSON.parse(savedHighScores);
 
