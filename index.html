@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
+    <!-- banner -->
     <header id="top">
         <h1>DO YOU HAVE THE KNOWLEDGE?</h1>
     </header>
@@ -22,28 +23,28 @@
             </div>
             <div id="timesUp" style="display: none;">Time's Up!</div>
         </div>
-        <div id="everything">
+        <div id="quizChallenge">
             <div>
-                  <!--start screen  -->
+                  <!--start -->
                   <div id="start">
-                      <h1> Coding Quiz Challenge</h1>
+                      <h1> JavaScript Quiz Challenge</h1>
                       <p>Test your knowledge</p>
                       <p>Wrong answers are minus 10 seconds!</p>
-                      <button type="button" id="start-quiz-button">Start Quiz</button>
+                      <button type="button" id="startBtn">Start Quiz</button>
                   </div>
-                  <!--quiz div  -->
+                  <!--quiz -->
                   <div id="questionDiv">
                     <p id="questionTitle"></p>
                     <div>
-                        <p><button id="btn0"></button></p>
                         <p><button id="btn1"></button></p>
                         <p><button id="btn2"></button></p>
                         <p><button id="btn3"></button></p>
-                        <hr id="break">
+                        <p><button id="btn4"></button></p>
+                        <hr id="break"> <br />
                         <p id="answerCheck"></p>
                     </div>
                   </div>
-                  <!-- score div -->
+                  <!-- scores -->
                   <div id="summary" style="display: none;">
                         <div>
                             <h2>Your final score is <span id="finalScore"></span> !</h2>
@@ -56,12 +57,9 @@
                     </div>
                 </div>
                 <!-- highscores -->
-                <div id="highScoreSection">
+                <div id="highScoreSection" style="display:none;">
                     <h2>High Scores</h2>                   
-                    
                     <div id="listOfHighScores"></div>
-
-                    <!-- append each highscore as new paragraph here -->
                     <p>
                         <button type="submit" id="goBackBtn">Go Back</button>
                         <button type="submit" id="clearHighScoreBtn">Clear High Scores</button>

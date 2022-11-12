@@ -1,5 +1,5 @@
 //questions
-const questions = [
+const quizQuestions = [
     {
         question: "What are various data types that exist in JavaScript",
         choices: ["a. Boolean", "b. Number", "c. String", "d. All the above"],
