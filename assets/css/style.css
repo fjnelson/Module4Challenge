@@ -6,7 +6,7 @@
     --blueAngel: blue;
 }
 
-body, main{
+body, main {
     background-color: aliceblue;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
@@ -33,24 +33,42 @@ body, main{
     display: flex;
 }
 
-#timer{
+#timer, #timesUp {
     display: flex;
     justify-content: center;
     font-size: 100px;
-    color: rgb(255, 46, 46)
+    color: black;
+    text-shadow: 2px 2px #ff0000;
 }
-#startBtn{
-    color: rgb(255, 255, 255); font-size: 20px; line-height: 20px; padding: 12px; border-radius: 10px; 
-    font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; 
-    text-transform: none; background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%); 
-    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; border: 2px solid rgb(28, 110, 164); display: inline-block;
+
+#questionTitle{
+    font-size: 40px;
+}
+
+#startBtn, a, #goBackBtn, #clearHighScoreBtn, #submitInitialBtn {
+    color: rgb(255, 255, 255); 
+    font-size: 20px; 
+    line-height: 20px; 
+    padding: 12px; 
+    border-radius: 10px; 
+    font-family: Georgia, serif; 
+    font-weight: normal; 
+    text-decoration: none; 
+    font-style: normal; 
+    font-variant: normal; 
+    text-transform: none; 
+    background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%); 
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; 
+    border: 2px solid rgb(28, 110, 164); 
+    display: inline-block;
     text-align: center;
     cursor: pointer;
+    justify-content: center;
     margin-bottom: 10px;
-
+    margin-top: 10px;
 }
 
-#startBtn:hover {
+#startBtn:hover, a:hover {
     background: #1C6EA4;
     -moz-transform: scale(1.2);
     -webkit-transform: scale(1.2);
@@ -58,8 +76,13 @@ body, main{
     -ms-transform: scale(1.2);
     transform: scale(1.2);
 }
-#startBtn:active {
+#startBtn:active, a:active {
     background: #144E75; 
+}
+
+#start h1 {
+   text-shadow: 2px 2px #ff0000;
+   font-size: 100px;
 }
 
 #btn1, #btn2, #btn3, #btn4 {
@@ -98,8 +121,12 @@ footer {
 }
 
 /* media queries */
-@media (min-width: 960px) {
+@media (max-width: 960px) {
 	.main-header .container {
 		justify-content: space-between;
 	}
+
+    #timer, #start h1{
+        font-size: 40px;
+    }
 }
