@@ -39,6 +39,51 @@ body, main{
     font-size: 100px;
     color: rgb(255, 46, 46)
 }
+#startBtn{
+    color: rgb(255, 255, 255); font-size: 20px; line-height: 20px; padding: 12px; border-radius: 10px; 
+    font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; 
+    text-transform: none; background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%); 
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; border: 2px solid rgb(28, 110, 164); display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+
+}
+
+#startBtn:hover {
+    background: #1C6EA4;
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+#startBtn:active {
+    background: #144E75; 
+}
+
+#btn1, #btn2, #btn3, #btn4 {
+    border: none;
+    background-color: hsl(360, 91%, 36%);
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
+      0px;
+    color: hsl(0, 0%, 100%);
+    font-size: 22px;
+    line-height: 22px;
+    margin: 16px 16px 16px 20px;
+    padding: 14px 34px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  #btn1:hover, #btn2:hover, #btn3:hover, #btn4:hover {
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
 
 #break, footer {
     border-top: 3px solid var(--blueAngel);
