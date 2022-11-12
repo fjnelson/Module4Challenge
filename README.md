@@ -12,15 +12,16 @@ N/A
 
 ## Installation
 
-Github pages hosting: placeholder
+Github pages hosting: https://fjnelson.github.io/Module4Challenge/
 
 ## Usage
 
-![alt text](placeholder)
+![alt text](./assets/images/challenge4.JPG)
 
 ## Credits
 
-Placeholder
+Credits for contributions: https://github.com/mmeii/code-quiz
+Mmeii on December 4th, 2020
 
 ## License
 
