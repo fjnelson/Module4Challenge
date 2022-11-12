@@ -29,7 +29,6 @@ body, main{
     display: none;
 }
 
-
 #viewHighScore{
     display: flex;
 }
@@ -41,7 +40,7 @@ body, main{
     color: rgb(255, 46, 46)
 }
 
-#break {
+#break, footer {
     border-top: 3px solid var(--blueAngel);
 }
 
@@ -51,7 +50,6 @@ footer {
     clear: both;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
-    border-top: 3px solid var(--blueAngel);
 }
 
 /* media queries */
