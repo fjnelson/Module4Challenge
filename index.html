@@ -4,11 +4,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quiz Time</title>
     <link rel="reset" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
-    
+    <header id="top">
+        <h1>DO YOU HAVE THE KNOWLEDGE?</h1>
+    </header>
+    <main>
+        <div>
+            <div>
+                <a href="#" id="viewHighScore">View High Scores</a>
+            </div>
+            <div id="timer">
+                Time: <span id="timeLeft">0</span>
+            </div>
+            <div id="timesUp" style="display: none;">Time's Up!</div>
+        </div>
+        <div id="everything">
+            <div>
+                  <!--start screen  -->
+                  <div id="start">
+                      <h1> Coding Quiz Challenge</h1>
+                      <p>Test your knowledge</p>
+                      <p>Wrong answers are minus 10 seconds!</p>
+                      <button type="button" id="start-quiz-button">Start Quiz</button>
+                  </div>
+                  <!--quiz div  -->
+                  <div id="questionDiv">
+                    <p id="questionTitle"></p>
+                    <div>
+                        <p><button id="btn0"></button></p>
+                        <p><button id="btn1"></button></p>
+                        <p><button id="btn2"></button></p>
+                        <p><button id="btn3"></button></p>
+                        <hr id="break">
+                        <p id="answerCheck"></p>
+                    </div>
+                  </div>
+                  <!-- score div -->
+                  <div id="summary" style="display: none;">
+                        <div>
+                            <h2>Your final score is <span id="finalScore"></span> !</h2>
+                            <form>
+                                <p>Enter your initials: <input id="initialInput">
+                                <button type="submit" id="submitInitialBtn" >Submit</button>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- highscores -->
+                <div id="highScoreSection">
+                    <h2>High Scores</h2>                   
+                    
+                    <div id="listOfHighScores"></div>
+
+                    <!-- append each highscore as new paragraph here -->
+                    <p>
+                        <button type="submit" id="goBackBtn">Go Back</button>
+                        <button type="submit" id="clearHighScoreBtn">Clear High Scores</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <section>
+            <h4>John Nelson</h4>
+        </section>
+    </footer>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/questions.js"></script>
 </body>
 </html>
