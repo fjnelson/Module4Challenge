@@ -1,42 +1,40 @@
 //contribution: https://github.com/mmeii/code-quiz
 
 // elements from HTML
-let highScore = document.getElementById("viewHighScore");
-let timeLeft = document.getElementById("timeLeft");
-let timesUp = document.getElementById("timesUp");
-let timer = document.getElementById("timer");
+let highScore = document.getElementById("viewHighScoreDisplay");
+let timeLeft = document.getElementById("timeLeftDisplay");
+let timesUp = document.getElementById("timesUpDisplay");
+let timer = document.getElementById("timerDisplay");
 let quizChallenge = document.getElementById("quizChallenge");
-let startLet = document.getElementById("start");
+let startLet = document.getElementById("startHomePage");
 let startBtn = document.getElementById("startBtn");
-let questionLet = document.getElementById("questionDiv");
-let questionTitle = document.getElementById("questionTitle");
+let questionLet = document.getElementById("questionBox");
+let questionBtns = document.getElementById("questionBtns");
 let choice1 = document.getElementById("btn1");
 let choice2 = document.getElementById("btn2");
 let choice3 = document.getElementById("btn3");
 let choice4 = document.getElementById("btn4");
-let answerCheck = document.getElementById("answerCheck");
-let summary = document.getElementById("summary");
-let finalScore = document.getElementById("finalScore");
-let initialInput = document.getElementById("initialInput");
+let answerCheck = document.getElementById("questionAnswerCheck");
+let summaryScores = document.getElementById("summaryScores");
+let finalTotal = document.getElementById("finalScoreTotal");
+let initialEntry = document.getElementById("initialUserEntry");
 let initialsBtn = document.getElementById("submitInitialBtn");
-let highScoreSection = document.getElementById("highScoreSection");
-let listHighScores = document.getElementById("listOfHighScores");
+let highScoreBox = document.getElementById("highScoreBox");
+let highScoresList = document.getElementById("highScoresList");
 let goBackBtn = document.getElementById("goBackBtn");
 let clearHighScoreBtn = document.getElementById("clearHighScoreBtn");
 
 // variables
 let correct = 0;
-let questionNum = 0;
-let scoreResult;
 let i = 0;
 
 // Timer
-let totalTime = 60;
-function newQuiz() {
+let totalTimer = 60;
+function startQuiz() {
   i = 0;
-  totalTime = 60;
-  timeLeft.textContent = totalTime;
-  initialInput.textContent = "";
+  totalTimer = 60;
+  timeLeft.textContent = totalTimer;
+  initialEntry.textContent = "";
 
   choice1.style.display = "unset";
   choice2.style.display = "unset";
@@ -48,11 +46,11 @@ function newQuiz() {
   timer.style.display = "block";
   timesUp.style.display = "none";
 
-  let startTimer = setInterval(function () {
-    totalTime--;
-    timeLeft.textContent = totalTime;
-    if (totalTime <= 0) {
-      clearInterval(startTimer);
+  let startTimerCountdown = setInterval(function () {
+    totalTimer--;
+    timeLeft.textContent = totalTimer;
+    if (totalTimer <= 0) {
+      clearInterval(startTimerCountdown);
       if (i < quizQuestions.length - 1) {
         gameOver();
       }
@@ -68,7 +66,7 @@ function showQuiz() {
 }
 
 function nextQuestion() {
-  questionTitle.textContent = quizQuestions[i].question;
+  questionBtns.textContent = quizQuestions[i].question;
   choice1.textContent = quizQuestions[i].choices[0];
   choice2.textContent = quizQuestions[i].choices[1];
   choice3.textContent = quizQuestions[i].choices[2];
@@ -81,8 +79,8 @@ function checkAnswer(answer) {
     correct++;
     answerCheck.textContent = "Yay! :)";
   } else {
-    totalTime -= 10;
-    timeLeft.textContent = totalTime;
+    totalTimer -= 10;
+    timeLeft.textContent = totalTimer;
     answerCheck.textContent =
       "Incorrect!!! :( The answer is: " + quizQuestions[i].answer;
   }
@@ -110,20 +108,20 @@ function chooseD() {
 
 // game ending
 function gameOver() {
-  summary.style.display = "block";
+  summaryScores.style.display = "block";
   questionLet.style.display = "none";
   startLet.style.display = "none";
   timer.style.display = "none";
   timesUp.style.display = "block";
 
-  finalScore.textContent = correct;
+  finalTotal.textContent = correct;
 }
 
 // high score in local storage
 function storeHighScores(event) {
   event.preventDefault();
 
-  if (initialInput.value === "") {
+  if (initialEntry.value === "") {
     alert("Initials Please!");
     return;
   }
@@ -131,8 +129,8 @@ function storeHighScores(event) {
   startLet.style.display = "none";
   timer.style.display = "none";
   timesUp.style.display = "none";
-  summary.style.display = "none";
-  highScoreSection.style.display = "block";
+  summaryScores.style.display = "none";
+  highScoreBox.style.display = "block";
 
   // store scores
   let savedHighScores = localStorage.getItem("high scores");
@@ -145,8 +143,8 @@ function storeHighScores(event) {
   }
 
   let userScore = {
-    initials: initialInput.value,
-    score: finalScore.textContent,
+    initials: initialEntry.value,
+    score: finalTotal.textContent,
   };
 
   scoresArray.push(userScore);
@@ -160,13 +158,13 @@ function storeHighScores(event) {
 // show high scores
 function showHighScores() {
   i = 0;
-  listHighScores.style.display = "unset";
+  highScoresList.style.display = "unset";
   startLet.style.display = "none";
   timer.style.display = "none";
   questionLet.style.display = "none";
   timesUp.style.display = "none";
-  summary.style.display = "none";
-  highScoreSection.style.display = "block";
+  summaryScores.style.display = "none";
+  highScoreBox.style.display = "block";
 
   let savedHighScores = localStorage.getItem("high scores");
 
@@ -181,11 +179,11 @@ function showHighScores() {
     let eachNewHighScore = document.createElement("p");
     eachNewHighScore.innerHTML =
       storedHighScores[i].initials + ": " + storedHighScores[i].score;
-    listHighScores.appendChild(eachNewHighScore);
+      highScoresList.appendChild(eachNewHighScore);
   }
 }
 
-startBtn.addEventListener("click", newQuiz);
+startBtn.addEventListener("click", startQuiz);
 choice1.addEventListener("click", chooseA);
 choice2.addEventListener("click", chooseB);
 choice3.addEventListener("click", chooseC);
@@ -205,14 +203,14 @@ highScore.addEventListener("click", function (event) {
 
 goBackBtn.addEventListener("click", function () {
   startLet.style.display = "block";
-  highScoreSection.style.display = "none";
+  highScoreBox.style.display = "none";
   window.location.reload();
 });
 
 clearHighScoreBtn.addEventListener("click", function () {
   window.localStorage.removeItem("high scores");
-  listHighScores.innerHTML = "High Scores Cleared!";
-  listHighScores.setAttribute(
+  highScoresList.innerHTML = "High Scores Cleared!";
+  highScoresList.setAttribute(
     "style",
     "font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"
   );

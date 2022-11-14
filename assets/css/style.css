@@ -29,11 +29,11 @@ body, main {
     display: none;
 }
 
-#viewHighScore{
+#viewHighScoreDisplay{
     display: flex;
 }
 
-#timer, #timesUp {
+#timerDisplay, #timesUpDisplay {
     display: flex;
     justify-content: center;
     font-size: 100px;
@@ -41,7 +41,7 @@ body, main {
     text-shadow: 2px 2px #ff0000;
 }
 
-#questionTitle{
+#questionBox{
     font-size: 40px;
 }
 
@@ -80,7 +80,7 @@ body, main {
     background: #144E75; 
 }
 
-#start h1 {
+#startHomePage h1 {
    text-shadow: 2px 2px #ff0000;
    font-size: 100px;
 }
@@ -122,11 +122,8 @@ footer {
 
 /* media queries */
 @media (max-width: 960px) {
-	.main-header .container {
-		justify-content: space-between;
-	}
 
-    #timer, #start h1{
+    #timerDisplay, #startHomePage h1{
         font-size: 40px;
     }
 }

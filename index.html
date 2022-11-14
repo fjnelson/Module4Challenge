@@ -15,39 +15,39 @@
     </header>
     <main>
         <div>
-            <a href="#" id="viewHighScore">Click to see High Scores</a>
-            <div id="timer" style="display: none;">
-                Time: <span id="timeLeft">0</span>
+            <a href="#" id="viewHighScoreDisplay">Click to see High Scores</a>
+            <div id="timerDisplay" style="display: none;">
+                Time: <span id="timeLeftDisplay">0</span>
             </div>
-            <div id="timesUp" style="display: none;">Time's Up!</div>
+            <div id="timesUpDisplay" style="display: none;">Time's Up!</div>
         </div>
         <div id="quizChallenge">
             <div>
                   <!--start -->
-                  <div id="start">
+                  <div id="startHomePage">
                       <h1> JavaScript Quiz Challenge</h1>
                       <p>Test your knowledge</p>
                       <p>Wrong answers are minus 10 seconds!</p>
                       <button type="button" id="startBtn">Start Quiz</button>
                   </div>
                   <!--quiz -->
-                  <div id="questionDiv">
-                    <p id="questionTitle"></p>
+                  <div id="questionBox">
+                    <p id="questionBtns"></p>
                     <div>
                         <p><button id="btn1"></button></p>
                         <p><button id="btn2"></button></p>
                         <p><button id="btn3"></button></p>
                         <p><button id="btn4"></button></p>
                         <hr id="break"> <br />
-                        <p id="answerCheck"></p>
+                        <p id="questionAnswerCheck"></p>
                     </div>
                   </div>
                   <!-- scores -->
-                  <div id="summary" style="display: none;">
+                  <div id="summaryScores" style="display: none;">
                         <div>
-                            <h2>Your final score is <span id="finalScore"></span> !</h2>
+                            <h2>Your final score is <span id="finalScoreTotal"></span> !</h2>
                             <form>
-                                <p>Enter your initials: <input id="initialInput">
+                                <p>Enter your initials: <input id="initialUserEntry">
                                 <button type="submit" id="submitInitialBtn" >Submit</button>
                                 </p>
                             </form>
@@ -55,9 +55,9 @@
                     </div>
                 </div>
                 <!-- highscores -->
-                <div id="highScoreSection" style="display: none;">
+                <div id="highScoreBox" style="display: none;">
                     <h2>High Scores</h2>                   
-                    <div id="listOfHighScores"></div>
+                    <div id="highScoresList"></div>
                     <p>
                         <button type="submit" id="goBackBtn">Go Back</button>
                         <button type="submit" id="clearHighScoreBtn">Clear High Scores</button>
