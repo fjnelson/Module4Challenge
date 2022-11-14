@@ -10,10 +10,10 @@ let startLet = document.getElementById("start");
 let startBtn = document.getElementById("startBtn");
 let questionLet = document.getElementById("questionDiv");
 let questionTitle = document.getElementById("questionTitle");
-let choiceA = document.getElementById("btn1");
-let choiceB = document.getElementById("btn2");
-let choiceC = document.getElementById("btn3");
-let choiceD = document.getElementById("btn4");
+let choice1 = document.getElementById("btn1");
+let choice2 = document.getElementById("btn2");
+let choice3 = document.getElementById("btn3");
+let choice4 = document.getElementById("btn4");
 let answerCheck = document.getElementById("answerCheck");
 let summary = document.getElementById("summary");
 let finalScore = document.getElementById("finalScore");
@@ -38,10 +38,10 @@ function newQuiz() {
   timeLeft.textContent = totalTime;
   initialInput.textContent = "";
 
-  choiceA.style.display = "unset";
-  choiceB.style.display = "unset";
-  choiceC.style.display = "unset";
-  choiceD.style.display = "unset";
+  choice1.style.display = "unset";
+  choice2.style.display = "unset";
+  choice3.style.display = "unset";
+  choice4.style.display = "unset";
 
   startLet.style.display = "none";
   questionLet.style.display = "block";
@@ -69,10 +69,10 @@ function showQuiz() {
 
 function nextQuestion() {
   questionTitle.textContent = quizQuestions[i].question;
-  choiceA.textContent = quizQuestions[i].choices[0];
-  choiceB.textContent = quizQuestions[i].choices[1];
-  choiceC.textContent = quizQuestions[i].choices[2];
-  choiceD.textContent = quizQuestions[i].choices[3];
+  choice1.textContent = quizQuestions[i].choices[0];
+  choice2.textContent = quizQuestions[i].choices[1];
+  choice3.textContent = quizQuestions[i].choices[2];
+  choice4.textContent = quizQuestions[i].choices[3];
 }
 
 // logic, -10 seconds for wrong answer
@@ -158,7 +158,6 @@ function storeHighScores(event) {
 }
 
 // show high scores
-
 function showHighScores() {
   i = 0;
   listHighScores.style.display = "unset";
@@ -187,10 +186,10 @@ function showHighScores() {
 }
 
 startBtn.addEventListener("click", newQuiz);
-choiceA.addEventListener("click", chooseA);
-choiceB.addEventListener("click", chooseB);
-choiceC.addEventListener("click", chooseC);
-choiceD.addEventListener("click", chooseD);
+choice1.addEventListener("click", chooseA);
+choice2.addEventListener("click", chooseB);
+choice3.addEventListener("click", chooseC);
+choice4.addEventListener("click", chooseD);
 
 initialsBtn.addEventListener("click", function (event) {
   storeHighScores(event);
