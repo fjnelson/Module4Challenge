@@ -196,7 +196,11 @@ initialsBtn.addEventListener("click", function (event) {
 });
 
 highScore.addEventListener("click", function (event) {
-  showHighScores(event);
+  if (!startLet.style.display) {
+    showHighScores(event);
+  }
+  else
+  return;
 });
 
 goBackBtn.addEventListener("click", function () {
