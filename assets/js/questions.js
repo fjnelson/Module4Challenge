@@ -12,7 +12,7 @@ const quizQuestions = [
     },
     {
         question: "What are some JavaScript frameworks",
-        choices: ["a. React", "b. Angular", "c. Node", "d. All of the above"],
+        choices: ["a. React", "b. Angular", "c. Node", "d. All the above"],
         answer: "d. All the above"
     },
     {
